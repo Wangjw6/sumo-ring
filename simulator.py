@@ -5,6 +5,8 @@ from build_ring import gen
 from sumolib import checkBinary
 import pandas as pd
 import  numpy as np
+import glob
+import matplotlib.pyplot as plt
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
     sys.path.append(tools)
@@ -14,7 +16,7 @@ else:
 import traci
 
 class TrafficSimulator():
-    def __init__(self, config, is_record, port=88):
+    def __init__(self, config, is_record,is_vis=False, port=88):
         self.config = config
         self.name = config.get('ENV_CONFIG', 'scenario')
         self.seed = config.getint('ENV_CONFIG', 'seed')
@@ -23,6 +25,7 @@ class TrafficSimulator():
         self.data_path = config.get('ENV_CONFIG', 'data_path')+self.name
         self.output_path = self.data_path + '\\output\\'
         self.is_record = is_record
+        self.is_vis = is_vis
         self.ring_length = config.getint('ENV_CONFIG', 'LENGTH')
         self.vehicle_record = {}
         self._init_sim(self.seed)
@@ -53,21 +56,37 @@ class TrafficSimulator():
         for car in cars:
             dist = self.sim.vehicle.getDistance(car)
             speed = self.sim.vehicle.getSpeed(car)
+            r = int(self.sim.vehicle.getDistance(car)/self.ring_length)
+            pos = self.sim.vehicle.getDistance(car)-r*self.ring_length
             if car not in self.vehicle_record:
                 self.vehicle_record[car] = {'step':[step],
                                             'dist':[dist],
-                                            'speed':[speed]}
+                                            'pos': [pos],
+                                            'speed':[speed],
+                                            'round':[r]}
             else:
                 self.vehicle_record[car]['step'].append(step)
                 self.vehicle_record[car]['dist'].append(dist)
-                self.vehicle_record[car]['step'].append(speed)
+                self.vehicle_record[car]['speed'].append(speed)
+                self.vehicle_record[car]['pos'].append(pos)
+                self.vehicle_record[car]['round'].append(r)
 
     def output_record(self):
         if not os.path.exists(self.output_path):
             os.makedirs(self.output_path)
         for key,values in self.vehicle_record.items():
-            np.save('%s//%s.npy'%(self.output_path,key),values)
+            df = pd.DataFrame.from_dict(values, orient="columns")
+            df.to_csv('%s//%s.csv'%(self.output_path,key))
         print('save...')
+
+    def vis_trajectory(self):
+        vehicles = []
+        for file in glob.glob(self.output_path+"\\*.csv"):
+            vehicles.append(pd.DataFrame(pd.read_csv(file)))
+        for v in vehicles:
+            plt.plot(v['step'],v['pos'])
+        plt.show()
+        return
 
     def _simulate(self, num_step):
         for s in range(num_step):
@@ -79,6 +98,8 @@ class TrafficSimulator():
 
         if self.is_record:
             self.output_record()
+        if self.is_vis:
+            self.vis_trajectory()
         self.terminate()
 
     def terminate(self):

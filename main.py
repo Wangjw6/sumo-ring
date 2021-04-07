@@ -15,6 +15,6 @@ if __name__ == '__main__':
     args = parse_args()
     config = configparser.ConfigParser()
     config.read(args.config_dir)
-    simluator = TrafficSimulator(config=config,is_record=True)
+    simluator = TrafficSimulator(config=config,is_record=True,is_vis=True)
     simluator._simulate(num_step=3600)
     print('done')

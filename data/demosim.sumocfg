@@ -1,0 +1,11 @@
+<configuration>
+  <input>
+    <net-file value="G:\mcgill\sumo-ring\data\demo\sim.net.xml"/>
+    <route-files value="G:\mcgill\sumo-ring\data\demo\sim.rou.xml"/>
+    <additional-files value="G:\mcgill\sumo-ring\data\demo\sim.add.xml"/>
+  </input>
+  <time>
+    <begin value="0"/>
+    <end value="36000"/>
+  </time>
+</configuration>

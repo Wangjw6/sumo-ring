@@ -1,0 +1,3 @@
+<additionals>
+<rerouter id="0" edges="right"><interval end="1e9"><destProbReroute id="top"/></interval></rerouter><rerouter id="1" edges="top"><interval end="1e9"><destProbReroute id="right"/></interval></rerouter>
+</additionals>

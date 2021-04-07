@@ -1,0 +1,10 @@
+<routes>
+  <vType id="type1" length="5" accel="5" decel="10" maxSpeed="70"/>
+  <route id="r0" edges="top left bottom right top"/>
+       <vehicle id="0" depart="0" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="1" depart="60" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="2" depart="120" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="3" depart="180" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="4" depart="240" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="5" depart="300" departPos="base" type="type1" route="r0" color="1,1,0"/>
+ </routes>

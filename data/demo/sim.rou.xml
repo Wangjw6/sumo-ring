@@ -7,4 +7,18 @@
         <vehicle id="3" depart="180" departPos="base" type="type1" route="r0" color="1,1,0"/>
         <vehicle id="4" depart="240" departPos="base" type="type1" route="r0" color="1,1,0"/>
         <vehicle id="5" depart="300" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="6" depart="360" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="7" depart="420" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="8" depart="480" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="9" depart="540" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="10" depart="600" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="11" depart="660" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="12" depart="720" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="13" depart="780" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="14" depart="840" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="15" depart="900" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="16" depart="960" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="17" depart="1020" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="18" depart="1080" departPos="base" type="type1" route="r0" color="1,1,0"/>
+        <vehicle id="19" depart="1140" departPos="base" type="type1" route="r0" color="1,1,0"/>
  </routes>

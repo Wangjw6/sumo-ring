@@ -8,4 +8,8 @@
     <begin value="0"/>
     <end value="3600"/>
   </time>
+  <output>
+    <summary-output value="output_sumo.xml"/>
+    <netstate-dump value="trajectories.xml" />
+  </output>
 </configuration>

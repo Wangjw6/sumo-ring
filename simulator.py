@@ -91,6 +91,10 @@ class TrafficSimulator():
     def _simulate(self, num_step):
         for s in range(num_step):
             self.sim.simulationStep()
+            if s>1000 and s<1500:
+                self.sim.edge.setMaxSpeed('top',10)
+            else:
+                self.sim.edge.setMaxSpeed('top', 70)
             if self.sim.vehicle.getIDCount()>0:
                 print('Step: ',s, 'Running vehicles: ', self.sim.vehicle.getIDCount())
             if self.is_record:

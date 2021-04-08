@@ -199,7 +199,10 @@ def output_config(config):
     str_config += '    <net-file value="%s"/>\n' % net_file
     str_config += '    <route-files value="%s"/>\n' % rou_file
     str_config += '    <additional-files value="%s"/>\n'% add_file
-    str_config += '  </input>\n  <time>\n'
+    str_config += '  </input>'
+    str_config += '  <output>\n'
+    str_config += '    <summary-output value="%s\\output_sumo.xml"/> \n<netstate-dump value="%s\\trajectories.xml" />'%(path, path)
+    str_config += '  </output>\n  <time>\n'
     str_config += '    <begin value="0"/>\n    <end value="%s"/>\n' % str( config.getint('ENV_CONFIG', 'DURATION'))
     str_config += '  </time>\n</configuration>\n'
     return str_config

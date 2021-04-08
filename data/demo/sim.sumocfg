@@ -1,11 +1,11 @@
 <configuration>
   <input>
-    <net-file value="G:\mcgill\sumo-ring\data\demo\sim.net.xml"/>
-    <route-files value="G:\mcgill\sumo-ring\data\demo\sim.rou.xml"/>
-    <additional-files value="G:\mcgill\sumo-ring\data\demo\sim.add.xml"/>
+    <net-file value="D:\GitHub\sumo-ring\data\demo\sim.net.xml"/>
+    <route-files value="D:\GitHub\sumo-ring\data\demo\sim.rou.xml"/>
+    <additional-files value="D:\GitHub\sumo-ring\data\demo\sim.add.xml"/>
   </input>  <output>
-    <summary-output value="G:\mcgill\sumo-ring\data\demo\output_sumo.xml"/> 
-<netstate-dump value="G:\mcgill\sumo-ring\data\demo\trajectories.xml" />  </output>
+    <summary-output value="D:\GitHub\sumo-ring\data\demo\output_sumo.xml"/> 
+<netstate-dump value="D:\GitHub\sumo-ring\data\demo\trajectories.xml" />  </output>
   <time>
     <begin value="0"/>
     <end value="7200"/>

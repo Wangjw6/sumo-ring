@@ -5,7 +5,7 @@ import configparser
 from simulator import TrafficSimulator
 def parse_args():
     parser = argparse.ArgumentParser()
-    default_config_dir = 'G:\\mcgill\\sumo-ring\\config\\demo.ini'
+    default_config_dir = 'config\\demo.ini'
     parser.add_argument('--config_dir', type=str, required=False,
                         default=default_config_dir, help="config dir")
 

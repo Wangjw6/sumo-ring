@@ -1,0 +1,11 @@
+<configuration>
+  <input>
+    <edge-files value="G:\mcgill\sumo-ring\data\custom\sim.edg.xml"/>
+    <node-files value="G:\mcgill\sumo-ring\data\custom\sim.nod.xml"/>
+    <type-files value="G:\mcgill\sumo-ring\data\custom\sim.typ.xml"/>
+    <connection-files value="G:\mcgill\sumo-ring\data\custom\sim.con.xml"/>
+  </input>
+  <output>
+    <output-file value="G:\mcgill\sumo-ring\data\custom\sim.net.xml"/>
+  </output>
+</configuration>

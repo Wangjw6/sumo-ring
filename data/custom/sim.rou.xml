@@ -1,0 +1,26 @@
+<routes>
+   <vType id="type1" length="5" carFollowModel="IDM" sigma="0.5" maxSpeed="60"/>
+  <route id="r0" edges="top left bottom right top"/>
+      <vehicle id="0"  departSpeed="max" depart="0" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="1"  departSpeed="max" depart="1" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="2"  departSpeed="max" depart="2" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="3"  departSpeed="max" depart="3" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="4"  departSpeed="max" depart="4" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="5"  departSpeed="max" depart="5" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="6"  departSpeed="max" depart="6" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="7"  departSpeed="max" depart="7" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="8"  departSpeed="max" depart="8" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="9"  departSpeed="max" depart="9" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="10"  departSpeed="max" depart="10" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="11"  departSpeed="max" depart="11" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="12"  departSpeed="max" depart="12" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="13"  departSpeed="max" depart="13" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="14"  departSpeed="max" depart="14" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="15"  departSpeed="max" depart="15" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="16"  departSpeed="max" depart="16" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="17"  departSpeed="max" depart="17" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="18"  departSpeed="max" depart="18" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="19"  departSpeed="max" depart="19" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="20"  departSpeed="max" depart="20" departPos="last" type="type1" route="r0" color="1,1,0"/>
+      <vehicle id="21"  departSpeed="max" depart="21" departPos="last" type="type1" route="r0" color="1,1,0"/>
+</routes>

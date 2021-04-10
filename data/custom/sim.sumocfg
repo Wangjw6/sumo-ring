@@ -1,0 +1,13 @@
+<configuration>
+  <input>
+    <net-file value="G:\mcgill\sumo-ring\data\custom\sim.net.xml"/>
+    <route-files value="G:\mcgill\sumo-ring\data\custom\sim.rou.xml"/>
+    <additional-files value="G:\mcgill\sumo-ring\data\custom\sim.add.xml"/>
+  </input>  <output>
+    <summary-output value="G:\mcgill\sumo-ring\data\custom\output_sumo.xml"/> 
+<netstate-dump value="G:\mcgill\sumo-ring\data\custom\trajectories.xml" />  </output>
+  <time>
+    <begin value="0"/>
+    <end value="3600"/>
+  </time>
+</configuration>

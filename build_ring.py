@@ -174,21 +174,20 @@ def output_netconfig(path):
 
 
 
-def output_trips(vehicle_num, depart_interval=60):
+def output_trips(vehicle_num, depart_interval=60,speed_limit=70):
     str_trip = '<routes>\n'
-    str_trip += '  <vType id="type1" length="5" accel="5" decel="10" maxSpeed="70"/>\n'
+    str_trip += '   <vType id="type1" length="5" carFollowModel="IDM" sigma="0.5" maxSpeed="%s"/>\n'%(str(speed_limit))
     str_trip += '  <route id="r0" edges="top left bottom right top"/>\n'
     begin = 0
     for v in range(vehicle_num):
-        str_trip += '       <vehicle id="%s" depart="%s" departPos="%s" type="type1" route="%s" color="1,1,0"/>\n '%(v,str(begin+v*depart_interval),'base','r0')
+        str_trip += '      <vehicle id="%s"  departSpeed="max" depart="%s" departPos="%s" type="type1" route="%s" color="1,1,0"/>\n'%(v,str(begin+v*depart_interval),'last','r0')
     str_trip += '</routes>'
     print('Number of vehicles: ',vehicle_num)
     return str_trip
 
-def gen_rou_file_(path, vehicle_num, seed=None):
-    flow_file = 'sim.rou.xml'
-    write_file(path + flow_file, output_trips(vehicle_num = config.getint('ENV_CONFIG', 'LENGTH'),depart_interval=config.getint('ENV_CONFIG', 'DEP_INTERVAL')))
-
+def output_flow():
+    str_flow = '<flow id="0" begin="0" end="1" period="3" departPos="last" departSpeed="5" departLane="free"><route edges="top left bottom right top"/></flow>'
+    return str_flow
 
 def output_config(config):
     path =  config.get('ENV_CONFIG', 'data_path')+config.get('ENV_CONFIG', 'scenario')
@@ -237,7 +236,10 @@ def gen(config,path):
     os.system('netconvert -c %s\\sim.netccfg'%path)
 
     # raw.rou.xml file
-    write_file(path+'\\sim.rou.xml', output_trips(vehicle_num=config.getint('ENV_CONFIG', 'VEHICLE_NUM')))
+    write_file(path + '\\sim.rou.xml', output_flow())
+    write_file(path+'\\sim.rou.xml', output_trips(depart_interval = config.getint('ENV_CONFIG', 'DEP_INTERVAL'),
+                                                  speed_limit=config.getint('ENV_CONFIG', 'SPEED_LIMIT'),
+                                                  vehicle_num=config.getint('ENV_CONFIG', 'VEHICLE_NUM')))
 
     # generate rou.xml file
     # os.system('jtrrouter -n sim.net.xml -r sim.raw.rou.xml -o sim.rou.xml')
